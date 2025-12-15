@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+title: "CasFly: SDK, Service, and Reproducibility Pipeline"
+message: "If you use this repository, please cite both the software and the CasFly paper."
+type: software
+authors:
+  - family-names: Gupta
+    given-names: Anshita
+  - family-names: Misra
+    given-names: Sudip
+repository-code: "https://github.com/anshita510/CasFly"
+url: "https://github.com/anshita510/CasFly"
+version: "v0.1.0"
+license: MIT
+preferred-citation:
+  type: article
+  title: "CasFly: Causal Chain Tracing Across Fragmented Edge Data for IoT Healthcare"
+  authors:
+    - family-names: Gupta
+      given-names: Anshita
+    - family-names: Misra
+      given-names: Sudip
+  journal: "IEEE Internet of Things Journal"
+  year: 2026
+  volume: 13
+  issue: 3
+  start: 4578
+  end: 4586
+  date-published: 2026-02-01
+  publisher: IEEE
+  doi: 10.1109/JIOT.2025.3633292
+  url: "https://ieeexplore.ieee.org/document/11250683/"
+  keywords:
+    - Medical services
+    - Internet of Things
+    - Probabilistic logic
+    - Viterbi algorithm
+    - Heuristic algorithms
+    - Protocols
+    - Heart rate
+    - Real-time systems
+    - Wearable Health Monitoring Systems
+    - Object recognition
+    - Causal chain tracing
+    - decentralized protocols
+    - edge computing
+    - fragmented data
+    - IoT healthcare
+    - probabilistic graphs

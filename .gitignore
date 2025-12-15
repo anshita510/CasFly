@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb.zip
+
+# macOS
+.DS_Store
+*.pages
+
+# Raw patient data — large, not committed
+/data/
+
+# Stray files
+*.pkl
+*.tphg
+transfer_rate.csv

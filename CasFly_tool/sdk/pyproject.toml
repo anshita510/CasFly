@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "casfly-sdk"
+version = "0.1.0"
+description = "Decentralized causal chain tracing across fragmented edge data — TPHG construction, LaVE expansion, and probabilistic routing for IoT health networks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+  {name = "Anshita Gupta"},
+  {name = "Sudip Misra"},
+]
+
+keywords = [
+  "causal-inference",
+  "IoT",
+  "healthcare",
+  "wearables",
+  "federated",
+  "edge-computing",
+  "viterbi",
+  "probabilistic-graph",
+  "decentralized",
+  "causal-chain-tracing",
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Core SDK has no third-party dependencies — pure Python stdlib only.
+# Install the service extra for the FastAPI HTTP layer.
+dependencies = []
+
+[project.optional-dependencies]
+# HTTP service layer: pip install casfly-sdk[service]
+service = [
+  "fastapi>=0.110",
+  "uvicorn>=0.29",
+  "pydantic>=2.0",
+]
+
+# Parquet + Excel input support: pip install casfly-sdk[data]
+data = [
+  "pandas>=2.0",
+  "pyarrow>=14.0",
+  "openpyxl>=3.1",
+]
+
+[project.scripts]
+casfly = "casfly_sdk.cli:main"
+
+[project.urls]
+Homepage      = "https://github.com/anshita510/CasFly"
+Repository    = "https://github.com/anshita510/CasFly"
+Documentation = "https://github.com/anshita510/CasFly/blob/main/sdk/README.md"
+"Bug Tracker" = "https://github.com/anshita510/CasFly/issues"
+Paper         = "https://ieeexplore.ieee.org/document/11250683/"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+casfly_sdk = ["py.typed"]

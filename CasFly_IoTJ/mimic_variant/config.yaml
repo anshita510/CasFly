@@ -1,0 +1,47 @@
+# ============================================================
+# config.yaml — Configuration for CasFly MIMIC experiments
+#
+# This file controls all path wiring, experiment parameters,
+# and output locations for the MIMIC variant of CasFly.
+# It is read by all Python scripts (02–05) via yaml.safe_load.
+#
+# Usage:
+#   All scripts expect this file to be present in the working
+#   directory (i.e., run from inside mimic_variant/).
+# ============================================================
+
+# ---- basic wiring ----
+lookup_csv: "../../data/mimic/processed/All_Device_Lookup_with_Probabilities.csv"
+filtered_patients_csv: "../../data/mimic/raw/filtered_patients_updated.csv"
+devices_root: "../../data/mimic/device_scripts"
+logs_root: "../../data/mimic/logs"
+prob_file: "../../data/mimic/processed/conditional_probabilities_all_events.csv"
+
+# device process names (change if your filenames differ)
+device_entry: "{device}/{device}.py"     # expands with Device3/Device3.py
+
+# who initiates
+initiator_device: "Device20"
+
+# which devices to actually launch as listeners (empty = auto from lookup)
+devices_to_launch: []
+
+# test scope
+max_patients: 25           # <= number of rows in filtered_patients_updated.csv
+sleep_between_initiates_s: 15
+
+# SOTA baselines (try/catch; skip if not installed)
+baselines:
+  pcmci_plus: true          # requires 'tigramite'
+  nri: false                # advanced; requires pytorch + data prep
+  attn_dag: false           # advanced; requires extra deps
+
+# scalability study
+scalability:
+  device_counts: [3, 6, 12, 18, 24]
+  per_count_trials: 5
+  emulate_latency_ms: [0, 10, 25, 50]    # extra per-hop delay, simulated
+  max_chain_depth: 10
+
+# plots
+output_dir: "../../data/mimic/experiments_out"

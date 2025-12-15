@@ -1,0 +1,29 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Large/generated outputs
+artifacts/
+evaluation/artifacts/
+evaluation/logs/
+*.zip
+*.gz
+*.pkl
+
+# Local envs
+.venv/
+venv/
+
+# Build / dist artifacts (created by python -m build)
+dist/
+build/
+*.egg-info/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Editor
+.vscode/
+.idea/

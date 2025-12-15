@@ -1,0 +1,5 @@
+event,device,probability
+Elevated Heart Rate,smartwatch,0.90
+Arrhythmia Alert,smartwatch,0.85
+Hypertension,bp_cuff,0.88
+Elevated Blood Pressure,bp_cuff,0.82
