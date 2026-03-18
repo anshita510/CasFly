@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Large/generated outputs
+artifacts/
+evaluation/artifacts/
+evaluation/logs/
+*.zip
+*.gz
+*.pkl
+
+# Local envs
+.venv/
+venv/

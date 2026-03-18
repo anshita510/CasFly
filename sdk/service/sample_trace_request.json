@@ -1,0 +1,49 @@
+{
+  "cpt_counts": [
+    {"cause": "Medication Non-Compliance", "effect": "Missed Beta-Blockers", "lag_bin": "0-7 days", "count": 30},
+    {"cause": "Missed Beta-Blockers", "effect": "Hypertension", "lag_bin": "0-7 days", "count": 25},
+    {"cause": "Hypertension", "effect": "Elevated Blood Pressure", "lag_bin": "0-7 days", "count": 20},
+    {"cause": "Elevated Blood Pressure", "effect": "Elevated Heart Rate", "lag_bin": "0-7 days", "count": 16},
+    {"cause": "Elevated Heart Rate", "effect": "Heart Attack", "lag_bin": "0-7 days", "count": 14}
+  ],
+  "routing_table": [
+    {"event_name": "Elevated Heart Rate", "device_id": "smartwatch", "probability": 0.80},
+    {"event_name": "Hypertension", "device_id": "bp_cuff", "probability": 0.90},
+    {"event_name": "Missed Beta-Blockers", "device_id": "med_dispenser", "probability": 0.95}
+  ],
+  "nodes": [
+    {
+      "device_id": "hospital",
+      "events": [
+        {"name": "Elevated Heart Rate", "timestamp": "2026-03-05T10:30:00Z"},
+        {"name": "Heart Attack", "timestamp": "2026-03-05T12:00:00Z"}
+      ]
+    },
+    {
+      "device_id": "smartwatch",
+      "events": [
+        {"name": "Hypertension", "timestamp": "2026-03-05T09:00:00Z"},
+        {"name": "Elevated Blood Pressure", "timestamp": "2026-03-05T10:00:00Z"}
+      ]
+    },
+    {
+      "device_id": "bp_cuff",
+      "events": [
+        {"name": "Medication Non-Compliance", "timestamp": "2026-03-05T06:00:00Z"},
+        {"name": "Missed Beta-Blockers", "timestamp": "2026-03-05T09:30:00Z"}
+      ]
+    },
+    {
+      "device_id": "med_dispenser",
+      "events": [
+        {"name": "Medication Non-Compliance", "timestamp": "2026-03-05T06:00:00Z"},
+        {"name": "Missed Beta-Blockers", "timestamp": "2026-03-05T09:30:00Z"}
+      ]
+    }
+  ],
+  "start_device": "hospital",
+  "start_event": "Heart Attack",
+  "max_hops": 8,
+  "max_depth": 10,
+  "fallback_depth": 3
+}
